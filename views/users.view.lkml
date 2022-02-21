@@ -74,7 +74,7 @@ view: users {
   }
   dimension: lenght {
     type: number
-    sql: len(${full_name} ;;
+    sql: length(${full_name} ;;
   }
   dimension: age_tier {
     type: tier
