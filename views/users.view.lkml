@@ -68,6 +68,20 @@ view: users {
     type: string
     sql: ${TABLE}.email ;;
   }
+  dimension: full_name {
+    type: string
+    sql: CONCAT(${first_name}, ' ',${last_name}) ;;
+  }
+  dimension: lenght {
+    type: number
+    sql: len(${full_name} ;;
+  }
+  dimension: age_tier {
+    type: tier
+    tiers: [1,10,20,30,40,50,60,70,80,99]
+    style: integer
+    sql: ${age} ;;
+  }
 
   dimension: first_name {
     type: string
@@ -98,9 +112,15 @@ view: users {
     type: zipcode
     sql: ${TABLE}.zip ;;
   }
+  measure: avg_user_age {
+    type: average
+    sql: ${age} ;;
+  }
+
 
   measure: count {
     type: count
     drill_fields: [id, first_name, last_name, orders.count]
   }
+
 }
