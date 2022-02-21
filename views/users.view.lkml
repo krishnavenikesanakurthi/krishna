@@ -72,9 +72,9 @@ view: users {
     type: string
     sql: CONCAT(${first_name}, ' ',${last_name}) ;;
   }
-  dimension: lenght {
+  dimension: length {
     type: number
-    sql: length(${full_name} ;;
+    sql: length(${full_name});;
   }
   dimension: age_tier {
     type: tier
