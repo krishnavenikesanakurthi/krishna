@@ -70,7 +70,7 @@ view: users {
   }
   dimension: full_name {
     type: string
-    sql: ${TABLE}.full_name, CONCAT(${first_name}, ' ',${last_name}) ;;
+    sql: CONCAT(${first_name}, ' ',${last_name})::text ;;
   }
   dimension: length {
     type: number
